@@ -5,7 +5,7 @@ class Fanta : Drink() {
     val price:Int = 2000
     val description:String = "환타 오렌지맛"
 
-    override fun prDrink() {
+    override fun printDrink() {
         println("3. $name | ${price}won | $description")
     }
 }

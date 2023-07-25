@@ -5,7 +5,7 @@ class Sprite : Drink(){
     val price:Int = 2000
     val description:String = "스프라이트"
 
-    override fun prDrink() {
-        println("3. $name | ${price}won | $description")
+    override fun printDrink() {
+        println("2. $name | ${price}won | $description")
     }
 }
