@@ -10,7 +10,9 @@ fun main() {
         try {  var totalMenuChoice = readLine()?.toInt()
             when (totalMenuChoice) {
                 1 -> {}
-                2 -> menuPrinter.printDrinkMenu()
+                2 -> {
+                    menuPrinter.printDrinkMenu()
+                }
                 3 -> menuPrinter.printSideMenu()
                 4 -> menuPrinter.printDessertMenu()
                 5 -> break
@@ -18,7 +20,6 @@ fun main() {
                     println("올바른 번호를 입력하세요.")
                 }
             }
-
         }catch (e: NumberFormatException){
             println("숫자를 입력해주세요")
         }
