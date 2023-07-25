@@ -14,16 +14,28 @@ fun main() {
                     menuPrinter.printDrinkMenu()
                     var drinkMenuChoice = readLine()?.toInt()
                     menuPrinter.printPurchaseOrNot()
+                    var purchaseDrinkChoice = readLine()?.toInt()
+                    if(purchaseDrinkChoice == 1) {
+
+                    }
                 }
                 3 -> {
                     menuPrinter.printSideMenu()
                     var sideMenuChoice = readLine()?.toInt()
                     menuPrinter.printPurchaseOrNot()
+                    var purchaseSideChoice = readLine()?.toInt()
+                    if(purchaseSideChoice == 1) {
+
+                    }
                 }
                 4 -> {
                     menuPrinter.printDessertMenu()
                     var dessertMenuChoice = readLine()?.toInt()
                     menuPrinter.printPurchaseOrNot()
+                    var purchaseDessertChoice = readLine()?.toInt()
+                    if(purchaseDessertChoice == 1) {
+
+                    }
                 }
                 5 -> break
                 else -> {
