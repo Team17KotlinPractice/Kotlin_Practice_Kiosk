@@ -6,6 +6,6 @@ class MacNugget : Side() {
     override var description = "163kcal/4조각"
 
     override fun printMenu() {
-        println("3. ${name} | ${price} | ${description}")
+        println("3. $name | ${price}won | $description")
     }
 }

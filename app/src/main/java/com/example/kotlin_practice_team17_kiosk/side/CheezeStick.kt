@@ -6,7 +6,7 @@ class CheezeStick : Side() {
     override var description = "골든 모짜렐라 치즈스틱"
 
     override fun printMenu() {
-        println("1. ${name} | ${price} | ${description}")
+        println("1. $name | ${price}won | $description")
     }
 
 }
