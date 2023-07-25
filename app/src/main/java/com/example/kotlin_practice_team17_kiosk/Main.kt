@@ -9,7 +9,9 @@ fun main() {
         try {  var totalMenuChoice = readLine()?.toInt()
             when (totalMenuChoice) {
                 1 -> {}
-                2 -> menuPrinter.printDrinkMenu()
+                2 -> {
+                    menuPrinter.printDrinkMenu()
+                }
                 3 -> menuPrinter.printSideMenu()
                 4 -> {}
                 5 -> break

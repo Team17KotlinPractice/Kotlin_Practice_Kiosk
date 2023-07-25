@@ -44,4 +44,5 @@ class MenuPrinter {
         macWing.printMenu()
         println("5. 뒤로가기")
     }
+
 }
