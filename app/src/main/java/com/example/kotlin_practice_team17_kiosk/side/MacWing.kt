@@ -6,6 +6,6 @@ class MacWing : Side() {
     override var description = "245kcal / 2조각"
 
     override fun printMenu() {
-        println("4. ${name} | ${price} | ${description}")
+        println("4. $name | ${price}won | $description")
     }
 }
