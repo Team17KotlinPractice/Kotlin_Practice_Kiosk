@@ -1,5 +1,9 @@
 package com.example.kotlin_practice_team17_kiosk
 
+import com.example.kotlin_practice_team17_kiosk.dessert.ApplePie
+import com.example.kotlin_practice_team17_kiosk.dessert.Chiller
+import com.example.kotlin_practice_team17_kiosk.dessert.Coleslaw
+import com.example.kotlin_practice_team17_kiosk.dessert.MacFlurry
 import com.example.kotlin_practice_team17_kiosk.side.CheezeStick
 import com.example.kotlin_practice_team17_kiosk.side.FrenchFries
 import com.example.kotlin_practice_team17_kiosk.side.MacNugget
@@ -42,6 +46,18 @@ class MenuPrinter {
         frenchFries.printMenu()
         macNugget.printMenu()
         macWing.printMenu()
+        println("5. 뒤로가기")
+    }
+    fun printDessertMenu() {
+        var applePie = ApplePie()
+        var chiller = Chiller()
+        var coleslaw = Coleslaw()
+        var macFlurry = MacFlurry()
+
+        applePie.printDessert()
+        chiller.printDessert()
+        coleslaw.printDessert()
+        macFlurry.printDessert()
         println("5. 뒤로가기")
     }
 

@@ -1,5 +1,6 @@
-package com.example.kotlin_practice_team17_kiosk
 
+
+import com.example.kotlin_practice_team17_kiosk.MenuPrinter
 import java.lang.NumberFormatException
 
 var menuPrinter = MenuPrinter()
@@ -13,7 +14,7 @@ fun main() {
                     menuPrinter.printDrinkMenu()
                 }
                 3 -> menuPrinter.printSideMenu()
-                4 -> {}
+                4 -> menuPrinter.printDessertMenu()
                 5 -> break
                 else -> {
                     println("올바른 번호를 입력하세요.")
