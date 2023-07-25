@@ -1,22 +1,26 @@
-
-
+import com.example.kotlin_practice_team17_kiosk.BasketController
 import com.example.kotlin_practice_team17_kiosk.MenuPrinter
+import com.example.kotlin_practice_team17_kiosk.side.drink.Drink
 import java.lang.NumberFormatException
 
+var drinkList = mutableListOf<Drink>()
+
 var menuPrinter = MenuPrinter()
+var basketController = BasketController()
 fun main() {
     while(true) {
         menuPrinter.printTotalMenu()
-        try {  var totalMenuChoice = readLine()?.toInt()
+        try {
+            var totalMenuChoice = readLine()?.toInt()
             when (totalMenuChoice) {
                 1 -> {}
                 2 -> {
                     menuPrinter.printDrinkMenu()
                     var drinkMenuChoice = readLine()?.toInt()
                     menuPrinter.printPurchaseOrNot()
-                    var purchaseDrinkChoice = readLine()?.toInt()
-                    if(purchaseDrinkChoice == 1) {
-
+                    var purchaseOrNotDrink = readLine()?.toInt()
+                    if (purchaseOrNotDrink != null && drinkMenuChoice != null) {
+                        basketController.addToBasketDrink(purchaseOrNotDrink, drinkMenuChoice)
                     }
                 }
                 3 -> {
@@ -38,6 +42,10 @@ fun main() {
                     }
                 }
                 5 -> break
+                6 ->
+                    for (drink in drinkList) {
+                        println(drink.printDrink())
+                    }
                 else -> {
                     println("올바른 번호를 입력하세요.")
                 }
