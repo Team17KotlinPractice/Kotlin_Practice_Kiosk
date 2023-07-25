@@ -1,5 +1,9 @@
 package com.example.kotlin_practice_team17_kiosk
 
+import com.example.kotlin_practice_team17_kiosk.burger.BigMac
+import com.example.kotlin_practice_team17_kiosk.burger.DoubleQuaterPoundCheeze
+import com.example.kotlin_practice_team17_kiosk.burger.MacCrispy
+import com.example.kotlin_practice_team17_kiosk.burger.Shanghai
 import com.example.kotlin_practice_team17_kiosk.side.CheezeStick
 import com.example.kotlin_practice_team17_kiosk.side.FrenchFries
 import com.example.kotlin_practice_team17_kiosk.side.MacNugget
@@ -31,6 +35,18 @@ class MenuPrinter {
         zeroCoke.printDrink()
         println("5. 뒤로가기")
     }
+    fun printBurgerMenu() {
 
+        var bigMac = BigMac()
+        var doubleQuaterPoundCheeze = DoubleQuaterPoundCheeze()
+        var macCrispy = MacCrispy()
+        var shanghai = Shanghai()
+
+        bigMac.printBurger()
+        doubleQuaterPoundCheeze.printBurger()
+        macCrispy.printBurger()
+        shanghai.printBurger()
+        println("5. 뒤로가기")
+    }
 
 }
