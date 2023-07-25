@@ -1,4 +1,11 @@
 package com.example.kotlin_practice_team17_kiosk.side.drink
 
-class ZeroCoke {
+class ZeroCoke: Drink() {
+    val name:String="제로콜라"
+    val price:Int = 2000
+    val description:String = "코카콜라 제로"
+
+    override fun prDrink() {
+        println("3. $name | ${price}won | $description")
+    }
 }
