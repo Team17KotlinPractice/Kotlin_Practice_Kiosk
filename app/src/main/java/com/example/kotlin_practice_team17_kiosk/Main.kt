@@ -17,7 +17,6 @@ fun main() {
                     println("올바른 번호를 입력하세요.")
                 }
             }
-
         }catch (e: NumberFormatException){
             println("숫자를 입력해주세요")
         }
