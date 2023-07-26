@@ -1,7 +1,9 @@
+
 import com.example.kotlin_practice_team17_kiosk.BasketController
 import com.example.kotlin_practice_team17_kiosk.MenuPrinter
 import com.example.kotlin_practice_team17_kiosk.dessert.Dessert
 import com.example.kotlin_practice_team17_kiosk.side.drink.Drink
+
 import java.lang.NumberFormatException
 
 var drinkList = mutableListOf<Drink>()
@@ -13,6 +15,7 @@ fun main() {
         try {
             var totalMenuChoice = readLine()?.toInt()
             when (totalMenuChoice) {
+
                 1 -> {}
                 2 -> {
                     menuPrinter.printDrinkMenu()
