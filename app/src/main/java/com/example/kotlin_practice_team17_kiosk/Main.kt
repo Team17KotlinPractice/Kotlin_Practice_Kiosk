@@ -1,6 +1,8 @@
 
 
+
 import com.example.kotlin_practice_team17_kiosk.MenuPrinter
+
 import java.lang.NumberFormatException
 
 var menuPrinter = MenuPrinter()
@@ -9,6 +11,7 @@ fun main() {
         menuPrinter.printTotalMenu()
         try {  var totalMenuChoice = readLine()?.toInt()
             when (totalMenuChoice) {
+
                 1 -> {}
                 2 -> {
                     menuPrinter.printDrinkMenu()
