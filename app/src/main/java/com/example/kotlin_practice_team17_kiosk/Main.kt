@@ -1,10 +1,10 @@
 import com.example.kotlin_practice_team17_kiosk.BasketController
 import com.example.kotlin_practice_team17_kiosk.MenuPrinter
+import com.example.kotlin_practice_team17_kiosk.dessert.Dessert
 import com.example.kotlin_practice_team17_kiosk.side.drink.Drink
 import java.lang.NumberFormatException
 
 var drinkList = mutableListOf<Drink>()
-
 var menuPrinter = MenuPrinter()
 var basketController = BasketController()
 fun main() {
@@ -29,7 +29,6 @@ fun main() {
                     menuPrinter.printPurchaseOrNot()
                     var purchaseSideChoice = readLine()?.toInt()
                     if(purchaseSideChoice == 1) {
-
                     }
                 }
                 4 -> {
@@ -38,7 +37,6 @@ fun main() {
                     menuPrinter.printPurchaseOrNot()
                     var purchaseDessertChoice = readLine()?.toInt()
                     if(purchaseDessertChoice == 1) {
-
                     }
                 }
                 5 -> break
