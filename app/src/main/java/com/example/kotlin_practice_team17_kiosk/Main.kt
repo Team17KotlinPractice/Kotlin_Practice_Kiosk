@@ -1,6 +1,6 @@
 
+import com.example.kotlin_practice_team17_kiosk.AddToBasket
 import com.example.kotlin_practice_team17_kiosk.BasketController
-import com.example.kotlin_practice_team17_kiosk.Customer
 import com.example.kotlin_practice_team17_kiosk.Menu
 import com.example.kotlin_practice_team17_kiosk.MenuPrinter
 
@@ -8,6 +8,7 @@ import java.lang.NumberFormatException
 
 var menuList = mutableListOf<Menu>()
 var menuPrinter = MenuPrinter()
+var addToBasket = AddToBasket()
 var basketController = BasketController()
 fun main() {
     while(true) {
@@ -15,68 +16,43 @@ fun main() {
         try {
             var totalMenuChoice = readLine()?.toInt()
             when (totalMenuChoice) {
-
                 1 -> {
                     menuPrinter.printBurgerMenu()
-                    var drinkMenuChoice = readLine()?.toInt()
-                    menuPrinter.printPurchaseOrNot()
-                    var purchaseOrNotBurger = readLine()?.toInt()
-                    if (drinkMenuChoice != null && purchaseOrNotBurger !=null) {
-                        basketController.addToBasketBurger(purchaseOrNotBurger,drinkMenuChoice)
+                    var burgerMenuChoice = readLine()?.toInt()
+                    if (burgerMenuChoice != null) {
+                        basketController.burgerBasket(burgerMenuChoice)
                     }
                 }
                 2 -> {
                     menuPrinter.printDrinkMenu()
                     var drinkMenuChoice = readLine()?.toInt()
-                    menuPrinter.printPurchaseOrNot()
-                    var purchaseOrNotDrink = readLine()?.toInt()
-                    if (purchaseOrNotDrink != null && drinkMenuChoice != null) {
-                        basketController.addToBasketDrink(purchaseOrNotDrink, drinkMenuChoice)
+                    if (drinkMenuChoice != null) {
+                        basketController.drinkBasket(drinkMenuChoice)
                     }
                 }
                 3 -> {
                     menuPrinter.printSideMenu()
                     var sideMenuChoice = readLine()?.toInt()
-                    menuPrinter.printPurchaseOrNot()
-                    var purchaseOrNotSide = readLine()?.toInt()
-                    if (sideMenuChoice != null && purchaseOrNotSide != null) {
-                        basketController.addToBasketDrink(purchaseOrNotSide, sideMenuChoice)
+                    if (sideMenuChoice != null) {
+                        basketController.sideBasket(sideMenuChoice)
                     }
-
                 }
                 4 -> {
                     menuPrinter.printDessertMenu()
                     var dessertMenuChoice = readLine()?.toInt()
-                    menuPrinter.printPurchaseOrNot()
-                    var purchaseOrNotDessert = readLine()?.toInt()
-                    if (dessertMenuChoice != null && purchaseOrNotDessert != null) {
-                        basketController.addToBasketDrink(purchaseOrNotDessert, dessertMenuChoice)
+                    if (dessertMenuChoice != null) {
+                        basketController.dessertBasket(dessertMenuChoice)
                     }
                 }
                 5 -> {
-                    var price = 0
-                    for(menu in menuList) {
-                        price += menu.price
-                    }
-                    var customer = Customer()
-                    println("가격은 ${price}원 입니다.")
-                    println("현재 보유 금액은 ${customer.money}입니다.")
-                    if (price>customer.money) {
-                        println("계산을 할 수 없습니다.")
-                    }
-                    else {
-                        println("계산이 완료되었습니다.")
-                    }
+                    basketController.calculate()
                     break
                 }
                 6 -> break
-                else -> {
-                    println("올바른 번호를 입력하세요.")
-                }
+                else -> { println("올바른 번호를 입력하세요.") }
             }
         }catch (e: NumberFormatException){
             println("숫자를 입력해주세요")
         }
-
     }
 }

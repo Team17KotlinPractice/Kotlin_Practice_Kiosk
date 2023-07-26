@@ -6,7 +6,7 @@ class Shanghai : Burger() {
     override var description:String = "맥 스파이시 상하이 버거"
 
     override fun printBurger() {
-        println("1. $name | ${price}won | $description")
+        println("4. $name | ${price}won | $description")
     }
 
 }

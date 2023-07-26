@@ -6,7 +6,7 @@ class MacCrispy : Burger() {
     override var description:String = "맥크리스피 버거"
 
     override fun printBurger() {
-        println("1. $name | ${price}won | $description")
+        println("3. $name | ${price}won | $description")
     }
 
 }
