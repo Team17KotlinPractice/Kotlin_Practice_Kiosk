@@ -16,7 +16,7 @@ fun main() {
                 4 -> {}
                 5 -> break
                 else -> {
-                    println("올바른 번호를 입력하세요.")
+                    println("올바른 번호를 입력하세요")
                 }
             }
 
