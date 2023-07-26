@@ -68,7 +68,6 @@ class MenuPrinter {
         macWing.printMenu()
         println("5. 뒤로가기")
     }
-
     fun printDessertMenu() {
         var applePie = ApplePie()
         var chiller = Chiller()
@@ -82,4 +81,10 @@ class MenuPrinter {
         macFlurry.printDessert()
         println("5. 뒤로가기")
     }
+
+    fun printPurchaseOrNot() {
+        println("해당 메뉴를 담으시겠습니까?")
+        println("1. YES  |  2. NO")
+    }
+
 }
