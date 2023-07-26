@@ -1,5 +1,6 @@
 
 import com.example.kotlin_practice_team17_kiosk.BasketController
+import com.example.kotlin_practice_team17_kiosk.Customer
 import com.example.kotlin_practice_team17_kiosk.Menu
 import com.example.kotlin_practice_team17_kiosk.MenuPrinter
 
@@ -57,7 +58,15 @@ fun main() {
                     for(menu in menuList) {
                         price += menu.price
                     }
+                    var customer = Customer()
                     println("가격은 ${price}원 입니다.")
+                    println("현재 보유 금액은 ${customer.money}입니다.")
+                    if (price>customer.money) {
+                        println("계산을 할 수 없습니다.")
+                    }
+                    else {
+                        println("계산이 완료되었습니다.")
+                    }
                     break
                 }
                 6 -> break
