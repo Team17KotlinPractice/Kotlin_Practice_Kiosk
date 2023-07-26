@@ -25,7 +25,8 @@ class MenuPrinter {
         println("2. 음료")
         println("3. 사이드")
         println("4. 디저트")
-        println("5. 종료")
+        println("5. 장바구니 계산")
+        println("6. 종료")
     }
     fun printDrinkMenu() {
 
