@@ -4,10 +4,7 @@ import com.example.kotlin_practice_team17_kiosk.burger.BigMac
 import com.example.kotlin_practice_team17_kiosk.burger.DoubleQuaterPoundCheeze
 import com.example.kotlin_practice_team17_kiosk.burger.MacCrispy
 import com.example.kotlin_practice_team17_kiosk.burger.Shanghai
-import com.example.kotlin_practice_team17_kiosk.side.CheezeStick
-import com.example.kotlin_practice_team17_kiosk.side.FrenchFries
-import com.example.kotlin_practice_team17_kiosk.side.MacNugget
-import com.example.kotlin_practice_team17_kiosk.side.MacWing
+
 import com.example.kotlin_practice_team17_kiosk.side.drink.Coke
 import com.example.kotlin_practice_team17_kiosk.side.drink.Fanta
 import com.example.kotlin_practice_team17_kiosk.side.drink.Sprite
