@@ -61,19 +61,25 @@ class BasketController {
 
     fun calculate() {
         var price = 0
-        for(menu in menuList) {
+        for (menu in menuList) {
             price += menu.price
         }
-        var customer = Customer()
-        println("가격은 ${price}원 입니다.")
-        println("현재 보유 금액은 ${customer.money}입니다.")
-        if(price == 0) { println("장바구니에 상품이 없습니다.") }
+        if (price == 0) {
+            println("상품이 없습니다.")
+        }
         else {
-            if (price > customer.money) {
-                println("계산을 할 수 없습니다.")
+            var customer = Customer()
+            println("가격은 ${price}원 입니다.")
+            println("현재 보유 금액은 ${customer.money}입니다.")
+            if (price == 0) {
+                println("장바구니에 상품이 없습니다.")
             } else {
-                println("계산이 완료되었습니다.")
-                println("남은 금액은 ${customer.money - price}입니다.")
+                if (price > customer.money) {
+                    println("계산을 할 수 없습니다.")
+                } else {
+                    println("계산이 완료되었습니다.")
+                    println("남은 금액은 ${customer.money - price}입니다.")
+                }
             }
         }
     }
