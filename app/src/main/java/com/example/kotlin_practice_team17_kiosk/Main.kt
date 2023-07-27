@@ -80,7 +80,7 @@ suspend fun main() {
                 5 -> {
                     if(!timeChecker.checkTimeRage()) {
                         basketController.calculate()
-                        break
+                        System.exit(0)
                     }
                     else {
                         println("점검시간입니다. 결제를 할 수 없습니다.")

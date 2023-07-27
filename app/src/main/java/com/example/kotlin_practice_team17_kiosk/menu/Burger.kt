@@ -6,14 +6,12 @@ class Burger(num: Int, name : String, price : Int, description : String) : Menu(
     var name = ""
     override var price = 0
     var description = ""
-
     init {
         this.num = num
         this.name = name
         this.price = price
         this.description = description
     }
-
     override fun printMenu() {
         println("${num}.$name | ${price}won | $description")
     }
