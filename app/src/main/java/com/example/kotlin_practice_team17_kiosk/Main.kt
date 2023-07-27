@@ -51,7 +51,7 @@ suspend fun main() {
                     if (burgerMenuChoice != null) {
                         basketController.burgerBasket(burgerMenuChoice)
                     }
-                    delay(3000)
+                    delay(2000)
                 }
                 2 -> {
                     menuPrinter.printDrinkMenu()
@@ -59,7 +59,7 @@ suspend fun main() {
                     if (drinkMenuChoice != null) {
                         basketController.drinkBasket(drinkMenuChoice)
                     }
-                    delay(3000)
+                    delay(2000)
                 }
                 3 -> {
                     menuPrinter.printSideMenu()
@@ -67,7 +67,7 @@ suspend fun main() {
                     if (sideMenuChoice != null) {
                         basketController.sideBasket(sideMenuChoice)
                     }
-                    delay(3000)
+                    delay(2000)
                 }
                 4 -> {
                     menuPrinter.printDessertMenu()
@@ -75,7 +75,7 @@ suspend fun main() {
                     if (dessertMenuChoice != null) {
                         basketController.dessertBasket(dessertMenuChoice)
                     }
-                    delay(3000)
+                    delay(2000)
                 }
                 5 -> {
                     if(!timeChecker.checkTimeRage()) {
@@ -91,7 +91,7 @@ suspend fun main() {
             }
         } catch (e: NumberFormatException) {
             println("숫자를 입력해주세요")
-            delay(3000)
+            delay(2000)
         }
     }
 }
