@@ -1,59 +1,72 @@
+package com.example.kotlin_practice_team17_kiosk_2ver
 
-import com.example.kotlin_practice_team17_kiosk.BasketController
-import com.example.kotlin_practice_team17_kiosk.MenuPrinter
-import com.example.kotlin_practice_team17_kiosk.dessert.Dessert
-import com.example.kotlin_practice_team17_kiosk.side.drink.Drink
-
+import com.example.kotlin_practice_team17_kiosk_2ver.menu.Burger
+import com.example.kotlin_practice_team17_kiosk_2ver.menu.Dessert
+import com.example.kotlin_practice_team17_kiosk_2ver.menu.Drink
+import com.example.kotlin_practice_team17_kiosk_2ver.menu.Menu
+import com.example.kotlin_practice_team17_kiosk_2ver.menu.Side
 import java.lang.NumberFormatException
 
-var drinkList = mutableListOf<Drink>()
+var burgerMenuList = mutableListOf<Burger>()
+var drinkMenuList = mutableListOf<Drink>()
+var sideMenuList = mutableListOf<Side>()
+var dessertMenuList = mutableListOf<Dessert>()
+
+var menuController = MenuController()
 var menuPrinter = MenuPrinter()
 var basketController = BasketController()
+var basketAdder = BasketAdder()
+
+var menuList = mutableListOf<Menu>()
+
 fun main() {
-    while(true) {
+    menuController.addBurgerMenu()
+    menuController.addDrinkMenu()
+    menuController.addSideMenu()
+    menuController.addDessertMenu()
+
+    while (true) {
         menuPrinter.printTotalMenu()
         try {
             var totalMenuChoice = readLine()?.toInt()
             when (totalMenuChoice) {
-
-                1 -> {}
+                1 -> {
+                    menuPrinter.printBurgerMenu()
+                    var burgerMenuChoice = readLine()?.toInt()
+                    if (burgerMenuChoice != null) {
+                        basketController.burgerBasket(burgerMenuChoice)
+                    }
+                }
                 2 -> {
                     menuPrinter.printDrinkMenu()
                     var drinkMenuChoice = readLine()?.toInt()
-                    menuPrinter.printPurchaseOrNot()
-                    var purchaseOrNotDrink = readLine()?.toInt()
-                    if (purchaseOrNotDrink != null && drinkMenuChoice != null) {
-                        basketController.addToBasketDrink(purchaseOrNotDrink, drinkMenuChoice)
+                    if (drinkMenuChoice != null) {
+                        basketController.drinkBasket(drinkMenuChoice)
                     }
                 }
                 3 -> {
                     menuPrinter.printSideMenu()
                     var sideMenuChoice = readLine()?.toInt()
-                    menuPrinter.printPurchaseOrNot()
-                    var purchaseSideChoice = readLine()?.toInt()
-                    if(purchaseSideChoice == 1) {
+                    if (sideMenuChoice != null) {
+                        basketController.sideBasket(sideMenuChoice)
                     }
                 }
                 4 -> {
                     menuPrinter.printDessertMenu()
                     var dessertMenuChoice = readLine()?.toInt()
-                    menuPrinter.printPurchaseOrNot()
-                    var purchaseDessertChoice = readLine()?.toInt()
-                    if(purchaseDessertChoice == 1) {
+                    if (dessertMenuChoice != null) {
+                        basketController.dessertBasket(dessertMenuChoice)
                     }
                 }
-                5 -> break
-                6 ->
-                    for (drink in drinkList) {
-                        println(drink.printDrink())
-                    }
-                else -> {
-                    println("올바른 번호를 입력하세요.")
+                5 -> {
+                    basketController.calculate()
+                    break
                 }
+                6 -> break
+                else -> {println("올바른 번호를 입력하세요.")}
             }
-        }catch (e: NumberFormatException){
+        } catch (e: NumberFormatException) {
             println("숫자를 입력해주세요")
         }
-
     }
 }
