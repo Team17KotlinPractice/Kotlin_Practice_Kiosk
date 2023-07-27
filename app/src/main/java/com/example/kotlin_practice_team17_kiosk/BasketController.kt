@@ -1,8 +1,6 @@
-package com.example.kotlin_practice_team17_kiosk
+package com.example.kotlin_practice_team17_kiosk_2ver
 
-import addToBasket
-import menuList
-import menuPrinter
+import com.example.kotlin_practice_team17_kiosk.Customer
 
 class BasketController {
     fun burgerBasket(burgerMenuChoice : Int) {
@@ -11,7 +9,7 @@ class BasketController {
                 menuPrinter.printPurchaseOrNot()
                 var purchaseOrNotBurger = readLine()?.toInt()
                 if (purchaseOrNotBurger !=null) {
-                    addToBasket.addToBasketBurger(purchaseOrNotBurger,burgerMenuChoice)
+                    basketAdder.addToBasketBurger(purchaseOrNotBurger,burgerMenuChoice)
                 }
             }
             5 -> {}
@@ -25,7 +23,7 @@ class BasketController {
                 menuPrinter.printPurchaseOrNot()
                 var purchaseOrNotDrink = readLine()?.toInt()
                 if (purchaseOrNotDrink != null) {
-                    addToBasket.addToBasketDrink(purchaseOrNotDrink, drinkMenuChoice)
+                    basketAdder.addToBasketDrink(purchaseOrNotDrink, drinkMenuChoice)
                 }
             }
             5 -> {}
@@ -39,7 +37,7 @@ class BasketController {
                 menuPrinter.printPurchaseOrNot()
                 var purchaseOrNotSide = readLine()?.toInt()
                 if (purchaseOrNotSide != null) {
-                    addToBasket.addToBasketSide(purchaseOrNotSide, sideMenuChoice)
+                    basketAdder.addToBasketSide(purchaseOrNotSide, sideMenuChoice)
                 }
             }
             5 -> {}
@@ -53,7 +51,7 @@ class BasketController {
                 menuPrinter.printPurchaseOrNot()
                 var purchaseOrNotDessert = readLine()?.toInt()
                 if (purchaseOrNotDessert != null) {
-                    addToBasket.addToBasketDessert(purchaseOrNotDessert, dessertMenuChoice)
+                    basketAdder.addToBasketDessert(purchaseOrNotDessert, dessertMenuChoice)
                 }
             }
             5 -> {}

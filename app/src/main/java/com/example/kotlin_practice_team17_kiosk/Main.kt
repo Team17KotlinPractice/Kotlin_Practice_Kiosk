@@ -1,17 +1,31 @@
+package com.example.kotlin_practice_team17_kiosk_2ver
 
-import com.example.kotlin_practice_team17_kiosk.AddToBasket
-import com.example.kotlin_practice_team17_kiosk.BasketController
-import com.example.kotlin_practice_team17_kiosk.Menu
-import com.example.kotlin_practice_team17_kiosk.MenuPrinter
-
+import com.example.kotlin_practice_team17_kiosk_2ver.menu.Burger
+import com.example.kotlin_practice_team17_kiosk_2ver.menu.Dessert
+import com.example.kotlin_practice_team17_kiosk_2ver.menu.Drink
+import com.example.kotlin_practice_team17_kiosk_2ver.menu.Menu
+import com.example.kotlin_practice_team17_kiosk_2ver.menu.Side
 import java.lang.NumberFormatException
 
-var menuList = mutableListOf<Menu>()
+var burgerMenuList = mutableListOf<Burger>()
+var drinkMenuList = mutableListOf<Drink>()
+var sideMenuList = mutableListOf<Side>()
+var dessertMenuList = mutableListOf<Dessert>()
+
+var menuController = MenuController()
 var menuPrinter = MenuPrinter()
-var addToBasket = AddToBasket()
 var basketController = BasketController()
+var basketAdder = BasketAdder()
+
+var menuList = mutableListOf<Menu>()
+
 fun main() {
-    while(true) {
+    menuController.addBurgerMenu()
+    menuController.addDrinkMenu()
+    menuController.addSideMenu()
+    menuController.addDessertMenu()
+
+    while (true) {
         menuPrinter.printTotalMenu()
         try {
             var totalMenuChoice = readLine()?.toInt()
@@ -49,9 +63,9 @@ fun main() {
                     break
                 }
                 6 -> break
-                else -> { println("올바른 번호를 입력하세요.") }
+                else -> {println("올바른 번호를 입력하세요.")}
             }
-        }catch (e: NumberFormatException){
+        } catch (e: NumberFormatException) {
             println("숫자를 입력해주세요")
         }
     }
