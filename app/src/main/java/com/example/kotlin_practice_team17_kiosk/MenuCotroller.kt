@@ -151,7 +151,7 @@ class MenuCotroller {
             val timeFormat = DateTimeFormatter.ofPattern("HH:mm:ss")
 
             var startTime = LocalTime.of(11, 0)
-            var endTime = LocalTime.of(12, 18)
+            var endTime = LocalTime.of(15, 34)
 
             var isTime = startTime > todayTime || endTime < todayTime
 
@@ -159,14 +159,13 @@ class MenuCotroller {
                 println("현재 시각은 ${todayTime.format(timeFormat)}입니다.")
                 println("은행 점검 시간은 ${startTime} ~ ${endTime} 이므로 결제할 수 없습니다.")
 
-                thread (true){
-                    runBlocking {
-                        launch {
-                            delay(3000)
-                            orderBasket(customer)
-                        }
+                runBlocking {
+                    launch {
+                        delay(3000)
                     }
                 }
+                orderBasket(customer)
+
             }else{
                 if (customer.money >= totalprice){
                     customer.money = customer.money - totalprice
