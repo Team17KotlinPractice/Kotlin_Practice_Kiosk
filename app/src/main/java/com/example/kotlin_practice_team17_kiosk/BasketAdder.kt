@@ -24,7 +24,7 @@ class BasketAdder {
             }
         }
         else if(purchaseOrNot == 2)
-        else {println("올바른 번호를 입력하세요.")}
+        else {println("올바른 번호를 입력하세요")}
     }
 
     fun addToBasketDrink(purchaseOrNot : Int, choice : Int) {
